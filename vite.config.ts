@@ -9,10 +9,12 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
+      imports: ["vue", "vue-router", "@vueuse/core"],
       resolvers: [ElementPlusResolver()]
     }),
     Components({
-      resolvers: [ElementPlusResolver()]
+      resolvers: [ElementPlusResolver()],
+      dirs: ["./src/fragments/**", "./src/components/**"]
     })
   ]
 });
